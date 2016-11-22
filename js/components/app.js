@@ -1,19 +1,20 @@
-var React = require('react');
-var Link = router.Link;
+const React = require('react');
+const Mailbox = require('./mailbox');
 
-
-var App = function(props) {
+let App = function(props) {
 	return (
 
 		<div>
+			<h1>Mailbox</h1>
 			<ul>
-				<li><Link to={'/:mailbox_name'}>{props.name}</Link></li>
-				<li><Link to={'/spam'}>Spam</Link></li>
+				<li> <Mailbox mailboxName='inbox' /> </li>
+				<li> <Mailbox mailboxName='spam' /> </li>
 			</ul>
 			<div>
 				{props.children}
 			</div>
-	)	</div>
+		</div>
+	)
 }
 
 module.exports = App;
